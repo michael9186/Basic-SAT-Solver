@@ -4,7 +4,7 @@ import java.util.concurrent.Executors
 import java.util.concurrent.Future
 import java.util.concurrent.TimeUnit
 
-private const val TIMEOUT_SECONDS = 10L
+private const val TIMEOUT_SECONDS = 5L * 60
 private val solverJar = File("out/artifacts/SAT_Solver_jar/SAT_Solver.jar").absolutePath
 private const val SOLVER_VERSION = "2"
 

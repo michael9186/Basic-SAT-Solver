@@ -6,23 +6,15 @@ private const val FALSE = -1
 
 class Solver2(private val numVars: Int, initialClauses: List<Clause>) {
 
-    private data class DecisionFrame(
-        val variable: Int,
-        var phase: Int, // 0 = try true next, 1 = try false next, 2 = done
-        val trailSize: Int,
-        val qhead: Int
-    )
-
     private val clauses = initialClauses.toMutableList()
     private val assignment = IntArray(numVars + 1)
     private val trail = mutableListOf<Int>()
     private var qhead = 0
-    private val stack = mutableListOf<DecisionFrame>()
+    private val watches = Array(2 * (numVars + 1) + 2) { mutableListOf<Clause>() }
 
-    private val watches =
-        Array(2 * (numVars + 1) + 2) {
-            mutableListOf<Clause>()
-        }
+    private val level = IntArray(numVars + 1) // decision level where var was assigned
+    private var currentLevel = 0
+    private val reason = arrayOfNulls<Clause>(numVars + 1) // propagated variables will have the reason clause stored
 
     init {
         for (c in clauses) {
@@ -38,71 +30,42 @@ class Solver2(private val numVars: Int, initialClauses: List<Clause>) {
 
         // initial unit clauses
         for (c in clauses) {
-
             if (c.lits.isEmpty()) {
                 return false
             }
 
             if (c.lits.size == 1) {
-
-                if (!enqueue(c.lits[0])) {
+                if (!enqueue(c.lits[0], c)) {
                     return false
                 }
             }
-        }
-
-        if (propagate() != null) {
-            return false
         }
 
         while (true) {
             val conflict = propagate()
             if (conflict != null) {
-                var resolved = false
-                while (stack.isNotEmpty()) {
-                    val frame = stack.last()
-                    undo(frame.trailSize)
-                    qhead = frame.qhead
+                // root-level conflict
+                if (currentLevel == 0) return false
 
-                    when (frame.phase) {
-                        // TRUE branch failed -> try FALSE
-                        0 -> {
-                            frame.phase = 1
-                            if (enqueue(-frame.variable)) {
-                                resolved = true
-                                break
-                            }
-                        }
-                        // FALSE branch failed -> pop
-                        1 -> {
-                            frame.phase = 2
-                            stack.removeLast()
-                        }
-                    }
+                val learned = analyzeConflict(conflict)
+                val backtrackLevel = computeBacktrackLevel(learned)
+                backtrack(backtrackLevel)
+
+                clauses.add(learned)
+                attachClause(learned)
+
+                enqueue(learned.lits[0], learned)
+
+            } else {
+                val decision = chooseLiteral()
+
+                if (decision == 0) {
+                    return true
                 }
 
-                if (!resolved) {
-                    return false
-                }
-
-                continue
+                currentLevel++
+                enqueue(decision, null)
             }
-
-            val decision = chooseLiteral()
-
-            if (decision == 0) { //All assigned
-                return true
-            }
-
-            stack.add(
-                DecisionFrame(
-                    variable = decision,
-                    phase = 0,
-                    trailSize = trail.size,
-                    qhead = qhead
-                )
-            )
-            enqueue(decision)
         }
     }
 
@@ -164,15 +127,12 @@ class Solver2(private val numVars: Int, initialClauses: List<Clause>) {
                     }
                 }
 
-                if (moved) {
-                    continue
-                }
+                if (moved) continue
 
                 // no replacement possible
-
                 when (literalValue(otherLit)) {
                     FALSE -> { return clause }
-                    UNASSIGNED -> { if (!enqueue(otherLit)) return clause }
+                    UNASSIGNED -> { if (!enqueue(otherLit, clause)) return clause }
                 }
                 i++
             }
@@ -185,7 +145,7 @@ class Solver2(private val numVars: Int, initialClauses: List<Clause>) {
     // ASSIGNMENT
     // =====================================================
 
-    private fun enqueue(lit: Int): Boolean {
+    private fun enqueue(lit: Int, from: Clause?): Boolean {
         val v = abs(lit)
         val value = if (lit > 0) TRUE else FALSE
         val current = assignment[v]
@@ -196,14 +156,9 @@ class Solver2(private val numVars: Int, initialClauses: List<Clause>) {
 
         assignment[v] = value
         trail.add(lit)
+        level[v] = currentLevel
+        reason[v] = from
         return true
-    }
-
-    private fun undo(targetSize: Int) {
-        while (trail.size > targetSize) {
-            val lit = trail.removeLast()
-            assignment[abs(lit)] = UNASSIGNED
-        }
     }
 
     // =====================================================
@@ -219,6 +174,81 @@ class Solver2(private val numVars: Int, initialClauses: List<Clause>) {
                 watches[litIndex(clause.lits[clause.w2])].add(clause)
             }
         }
+    }
+
+    // =====================================================
+    // CONFLICT DRIVEN STUFF
+    // =====================================================
+
+    private fun analyzeConflict(conflict: Clause): Clause {
+        val learned = mutableListOf<Int>()
+        val seen = BooleanArray(numVars + 1)
+        var pathC = 0
+        var p = 0
+        var clause: Clause = conflict
+        var index = trail.size - 1
+
+        while (true) {
+            for (lit in clause.lits) {
+                val v = abs(lit)
+
+                if (v == abs(p)) continue // skip pivot variable itself
+                if (seen[v]) continue
+
+                seen[v] = true
+
+                if (level[v] == currentLevel) {
+                    pathC++
+                } else {
+                    learned.add(lit)
+                }
+            }
+
+            // select latest assigned seen literal
+            while (true) {
+                p = trail[index--]
+                if (seen[abs(p)]) {
+                    break
+                }
+            }
+
+            pathC--
+            if (pathC <= 0) break // FIRST UIP FOUND
+
+            clause = reason[abs(p)]
+                ?: error("reason unexpectedly null")
+        }
+
+        learned.add(0, -p)
+        return Clause(learned.distinct().toIntArray())
+    }
+
+    private fun computeBacktrackLevel(clause: Clause): Int {
+        if (clause.lits.size <= 1) {
+            return 0
+        }
+        var maxLevel = 0
+        for (i in 1..<clause.lits.size) {
+            val lit = clause.lits[i]
+            val v = abs(lit)
+            maxLevel = maxOf(maxLevel, level[v])
+        }
+        return maxLevel
+    }
+
+    private fun backtrack(targetLevel: Int) {
+        while (
+            trail.isNotEmpty() &&
+            level[abs(trail.last())] > targetLevel
+        ) {
+            val lit = trail.removeLast()
+            val v = abs(lit)
+            assignment[v] = UNASSIGNED
+            level[v] = 0
+            reason[v] = null
+        }
+        qhead = trail.size
+        currentLevel = targetLevel
     }
 
     // =====================================================
