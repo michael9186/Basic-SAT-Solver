@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Benchmark" type="JetRunConfigurationType">
+    <option name="MAIN_CLASS_NAME" value="BenchmarkKt" />
+    <module name="SAT_Solver" />
+    <shortenClasspath name="NONE" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+      <option name="BuildArtifacts" enabled="true">
+        <artifact name="SAT_Solver:jar" />
+      </option>
+    </method>
+  </configuration>
+</component>

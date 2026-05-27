@@ -4,7 +4,7 @@ private const val UNASSIGNED = 0
 private const val TRUE = 1
 private const val FALSE = -1
 
-class Solver(
+class Solver1(
     private val numVars: Int,
     private val clauses: List<Clause>
 
@@ -80,6 +80,10 @@ class Solver(
     private fun initializeWatchLists() {
 
         for (clause in clauses) {
+
+            if (clause.lits.isEmpty()) {
+                continue
+            }
 
             val l1 = clause.lits[clause.w1]
 

@@ -1,33 +1,33 @@
 fun main(args: Array<String>) {
 
-    if (args.isEmpty()) {
-        println("Usage: <cnf file>")
+    if (args.isEmpty() || args.size != 2) {
+        println("Usage: solver <1/2> <file>")
         return
     }
 
+    val solverVersion = args[0]
+
     val parser = DimacsParser()
+    val (numVars, clauses) = parser.parse(args[1])
 
-    for (i in 0..13) {
-        val (numVars, clauses) = parser.parse("test-formulas/sat$i.in")
-        println("test-formulas/sat$i.in")
-        println("Variables: $numVars")
-        /*
-        for (c in clauses) {
-            println(c.lits.joinToString(" "))
+    val result = when (solverVersion) {
+        "1" -> {
+            val solver = Solver1(numVars, clauses)
+            solver.solve()
         }
-        */
-
-        val solver = Solver(numVars, clauses)
-
-        val result = solver.solve()
-
-        if (result) {
-            println("SAT")
-            solver.printAssignments()
-        } else {
-            println("UNSAT")
+        "2" -> {
+            val solver = Solver2(numVars, clauses)
+            solver.solve()
+        }
+        else -> {
+            println("Unknown solver version: $solverVersion")
+            return
         }
     }
 
+    if (result) {
+        println("SAT")
+    } else {
+        println("UNSAT")
+    }
 }
-
