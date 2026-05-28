@@ -1,0 +1,780 @@
+========================================
+SAT Solver Parallel Tests
+========================================
+
+Timeout: 300s
+Tests: 86
+Solver: 1
+
+----------------------------------------
+Formula: add128.in
+Expected: UNSAT
+Actual:   TIMEOUT
+Result: TIMEOUT (300s)
+Runtime: 300161,452 ms
+----------------------------------------
+Formula: add16.in
+Expected: UNSAT
+Actual:   TIMEOUT
+Result: TIMEOUT (300s)
+Runtime: 300099,853 ms
+----------------------------------------
+Formula: add16R.in
+Expected: UNSAT
+Actual:   TIMEOUT
+Result: TIMEOUT (300s)
+Runtime: 300192,267 ms
+----------------------------------------
+Formula: add2.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1401,798 ms
+Decisions: 4
+Propagations: 46
+Conflicts: 5
+----------------------------------------
+Formula: add2R.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1134,928 ms
+Decisions: 4
+Propagations: 46
+Conflicts: 5
+----------------------------------------
+Formula: add32.in
+Expected: UNSAT
+Actual:   TIMEOUT
+Result: TIMEOUT (300s)
+Runtime: 300071,811 ms
+----------------------------------------
+Formula: add32R.in
+Expected: UNSAT
+Actual:   TIMEOUT
+Result: TIMEOUT (300s)
+Runtime: 300051,902 ms
+----------------------------------------
+Formula: add4.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1604,330 ms
+Decisions: 255
+Propagations: 5349
+Conflicts: 256
+----------------------------------------
+Formula: add4R.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1835,832 ms
+Decisions: 255
+Propagations: 5349
+Conflicts: 256
+----------------------------------------
+Formula: add64.in
+Expected: UNSAT
+Actual:   TIMEOUT
+Result: TIMEOUT (300s)
+Runtime: 300028,382 ms
+----------------------------------------
+Formula: add8.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 2214,582 ms
+Decisions: 65535
+Propagations: 1666981
+Conflicts: 65536
+----------------------------------------
+Formula: add8R.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 2985,712 ms
+Decisions: 65535
+Propagations: 1666981
+Conflicts: 65536
+----------------------------------------
+Formula: assume2.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 562,263 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 0
+----------------------------------------
+Formula: assume3.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1134,651 ms
+Decisions: 4
+Propagations: 5
+Conflicts: 1
+----------------------------------------
+Formula: assume7.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1134,339 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 0
+----------------------------------------
+Formula: bug1.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1160,109 ms
+Decisions: 0
+Propagations: 1
+Conflicts: 1
+----------------------------------------
+Formula: clash.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1122,319 ms
+Decisions: 0
+Propagations: 0
+Conflicts: 0
+----------------------------------------
+Formula: dominate1.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1133,170 ms
+Decisions: 4
+Propagations: 8
+Conflicts: 0
+----------------------------------------
+Formula: empty.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 961,085 ms
+Decisions: 0
+Propagations: 0
+Conflicts: 0
+----------------------------------------
+Formula: eq1.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1284,087 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 0
+----------------------------------------
+Formula: eq2.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1238,255 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 0
+----------------------------------------
+Formula: f2r.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1171,166 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 2
+----------------------------------------
+Formula: f3r.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1165,486 ms
+Decisions: 3
+Propagations: 7
+Conflicts: 4
+----------------------------------------
+Formula: full2.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 834,369 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 2
+----------------------------------------
+Formula: full2R.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 776,728 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 2
+----------------------------------------
+Formula: full2no00.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 879,289 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 0
+----------------------------------------
+Formula: full2no01.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 917,128 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 0
+----------------------------------------
+Formula: full2no10.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 969,109 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 1
+----------------------------------------
+Formula: full2no11.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 764,352 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 1
+----------------------------------------
+Formula: full3.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 743,680 ms
+Decisions: 3
+Propagations: 6
+Conflicts: 4
+----------------------------------------
+Formula: full3R.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 799,511 ms
+Decisions: 3
+Propagations: 6
+Conflicts: 4
+----------------------------------------
+Formula: full4.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 637,903 ms
+Decisions: 7
+Propagations: 14
+Conflicts: 8
+----------------------------------------
+Formula: mcs1.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 708,931 ms
+Decisions: 0
+Propagations: 0
+Conflicts: 0
+----------------------------------------
+Formula: mcs2.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 782,873 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 2
+----------------------------------------
+Formula: mcs3.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 606,091 ms
+Decisions: 0
+Propagations: 0
+Conflicts: 0
+----------------------------------------
+Formula: mus0.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 644,038 ms
+Decisions: 0
+Propagations: 0
+Conflicts: 0
+----------------------------------------
+Formula: mus1.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 686,564 ms
+Decisions: 0
+Propagations: 0
+Conflicts: 0
+----------------------------------------
+Formula: mus2.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 609,544 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 2
+----------------------------------------
+Formula: mus3.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 702,500 ms
+Decisions: 0
+Propagations: 0
+Conflicts: 0
+----------------------------------------
+Formula: or.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 610,351 ms
+Decisions: 2
+Propagations: 2
+Conflicts: 0
+----------------------------------------
+Formula: ph2.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 817,499 ms
+Decisions: 1
+Propagations: 9
+Conflicts: 2
+----------------------------------------
+Formula: ph3.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1139,765 ms
+Decisions: 8
+Propagations: 59
+Conflicts: 9
+----------------------------------------
+Formula: ph4.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1041,146 ms
+Decisions: 51
+Propagations: 389
+Conflicts: 52
+----------------------------------------
+Formula: ph5.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 807,057 ms
+Decisions: 374
+Propagations: 2999
+Conflicts: 375
+----------------------------------------
+Formula: ph6.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 921,831 ms
+Decisions: 3245
+Propagations: 27325
+Conflicts: 3246
+----------------------------------------
+Formula: prime121.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 871,803 ms
+Decisions: 13
+Propagations: 1820
+Conflicts: 11
+----------------------------------------
+Formula: prime1369.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1357,713 ms
+Decisions: 352
+Propagations: 105733
+Conflicts: 350
+----------------------------------------
+Formula: prime1681.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1519,789 ms
+Decisions: 413
+Propagations: 120741
+Conflicts: 411
+----------------------------------------
+Formula: prime169.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1076,850 ms
+Decisions: 40
+Propagations: 7000
+Conflicts: 38
+----------------------------------------
+Formula: prime1849.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1355,420 ms
+Decisions: 171
+Propagations: 51924
+Conflicts: 168
+----------------------------------------
+Formula: prime2209.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1230,127 ms
+Decisions: 96
+Propagations: 37301
+Conflicts: 92
+----------------------------------------
+Formula: prime25.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 971,660 ms
+Decisions: 6
+Propagations: 439
+Conflicts: 6
+----------------------------------------
+Formula: prime289.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1128,027 ms
+Decisions: 115
+Propagations: 24038
+Conflicts: 114
+----------------------------------------
+Formula: prime361.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1053,294 ms
+Decisions: 56
+Propagations: 12550
+Conflicts: 54
+----------------------------------------
+Formula: prime4.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 975,599 ms
+Decisions: 2
+Propagations: 27
+Conflicts: 1
+----------------------------------------
+Formula: prime49.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 945,603 ms
+Decisions: 5
+Propagations: 490
+Conflicts: 3
+----------------------------------------
+Formula: prime529.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1368,978 ms
+Decisions: 50
+Propagations: 13988
+Conflicts: 47
+----------------------------------------
+Formula: prime65537.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 12856,499 ms
+Decisions: 32766
+Propagations: 31184572
+Conflicts: 32767
+----------------------------------------
+Formula: prime841.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1335,140 ms
+Decisions: 139
+Propagations: 36473
+Conflicts: 136
+----------------------------------------
+Formula: prime9.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 783,093 ms
+Decisions: 2
+Propagations: 129
+Conflicts: 2
+----------------------------------------
+Formula: prime961.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1148,865 ms
+Decisions: 19
+Propagations: 4507
+Conflicts: 15
+----------------------------------------
+Formula: sat0.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 836,538 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 2
+----------------------------------------
+Formula: sat1.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 805,782 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 0
+----------------------------------------
+Formula: sat10.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 689,311 ms
+Decisions: 3
+Propagations: 6
+Conflicts: 2
+----------------------------------------
+Formula: sat11.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 913,722 ms
+Decisions: 3
+Propagations: 6
+Conflicts: 2
+----------------------------------------
+Formula: sat12.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 894,281 ms
+Decisions: 3
+Propagations: 7
+Conflicts: 3
+----------------------------------------
+Formula: sat13.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 800,769 ms
+Decisions: 3
+Propagations: 7
+Conflicts: 3
+----------------------------------------
+Formula: sat2.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 638,653 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 0
+----------------------------------------
+Formula: sat3.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 640,595 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 1
+----------------------------------------
+Formula: sat4.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 653,615 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 1
+----------------------------------------
+Formula: sat5.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 937,181 ms
+Decisions: 3
+Propagations: 6
+Conflicts: 4
+----------------------------------------
+Formula: sat6.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 674,157 ms
+Decisions: 2
+Propagations: 3
+Conflicts: 0
+----------------------------------------
+Formula: sat7.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 773,339 ms
+Decisions: 2
+Propagations: 3
+Conflicts: 0
+----------------------------------------
+Formula: sat8.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 707,350 ms
+Decisions: 2
+Propagations: 4
+Conflicts: 1
+----------------------------------------
+Formula: sat9.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 711,369 ms
+Decisions: 2
+Propagations: 4
+Conflicts: 1
+----------------------------------------
+Formula: scc1.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 598,866 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 0
+----------------------------------------
+Formula: scc2.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 723,950 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 2
+----------------------------------------
+Formula: sub0.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 623,946 ms
+Decisions: 3
+Propagations: 3
+Conflicts: 0
+----------------------------------------
+Formula: unit0.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 665,501 ms
+Decisions: 0
+Propagations: 1
+Conflicts: 0
+----------------------------------------
+Formula: unit1.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 710,768 ms
+Decisions: 0
+Propagations: 1
+Conflicts: 0
+----------------------------------------
+Formula: unit2.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 631,900 ms
+Decisions: 0
+Propagations: 2
+Conflicts: 0
+----------------------------------------
+Formula: unit3.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 677,867 ms
+Decisions: 0
+Propagations: 2
+Conflicts: 0
+----------------------------------------
+Formula: unit4.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 696,769 ms
+Decisions: 0
+Propagations: 1
+Conflicts: 1
+----------------------------------------
+Formula: unit5.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 648,479 ms
+Decisions: 0
+Propagations: 5
+Conflicts: 1
+----------------------------------------
+Formula: watch0.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 589,534 ms
+Decisions: 0
+Propagations: 2
+Conflicts: 0
+----------------------------------------
+Formula: watch1.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 516,739 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 0
+
+========================================
+SUMMARY
+========================================
+Passed:   80
+Failed:   0
+Timeouts: 6
+Errors:   0
+
+Solver Runtime Sum: 1888,989 s
+Wall Clock Runtime: 300,271 s
+
+Average Solver Runtime: 21,965 s
+Average Decisions: 1971,92
+Average Propagations: 406714,28
+Average Conflicts: 1971,52
