@@ -10,18 +10,25 @@ fun main(args: Array<String>) {
     val parser = DimacsParser()
     val (numVars, clauses) = parser.parse(args[1])
 
-    val result = when (solverVersion) {
+    var stats: SolverStats? = null
+
+    val result: Boolean
+    when (solverVersion) {
         "1" -> {
             val solver = Solver1(numVars, clauses)
-            solver.solve()
+            result = solver.solve()
+            stats = solver.stats
         }
+
         "2" -> {
             val solver = Solver2(numVars, clauses)
-            solver.solve()
+            result = solver.solve()
+            stats = solver.stats
         }
+
         else -> {
             println("Unknown solver version: $solverVersion")
-            return
+            result = false
         }
     }
 
@@ -29,5 +36,13 @@ fun main(args: Array<String>) {
         println("SAT")
     } else {
         println("UNSAT")
+    }
+
+    if (stats != null) {
+        println("Stats:")
+        println("DECISIONS ${stats.decisions}")
+        println("PROPAGATIONS ${stats.propagations}")
+        println("CONFLICTS ${stats.conflicts}")
+        if (solverVersion == "2") {println("LEARNED ${stats.learnedClauses}")}
     }
 }

@@ -6,6 +6,8 @@ private const val FALSE = -1
 
 class Solver2(private val numVars: Int, initialClauses: List<Clause>) {
 
+    val stats = SolverStats()
+
     private val clauses = initialClauses.toMutableList()
     private val assignment = IntArray(numVars + 1)
     private val trail = mutableListOf<Int>()
@@ -52,6 +54,7 @@ class Solver2(private val numVars: Int, initialClauses: List<Clause>) {
                 backtrack(backtrackLevel)
 
                 clauses.add(learned)
+                stats.learnedClauses++
                 attachClause(learned)
 
                 enqueue(learned.lits[0], learned)
@@ -64,6 +67,7 @@ class Solver2(private val numVars: Int, initialClauses: List<Clause>) {
                 }
 
                 currentLevel++
+                stats.decisions++
                 enqueue(decision, null)
             }
         }
@@ -75,6 +79,7 @@ class Solver2(private val numVars: Int, initialClauses: List<Clause>) {
 
     private fun propagate(): Clause? {
         while (qhead < trail.size) {
+            stats.propagations++
             val lit = trail[qhead++]
             val falseLit = -lit
             val watchList = watches[litIndex(falseLit)]
@@ -131,7 +136,10 @@ class Solver2(private val numVars: Int, initialClauses: List<Clause>) {
 
                 // no replacement possible
                 when (literalValue(otherLit)) {
-                    FALSE -> { return clause }
+                    FALSE -> {
+                        stats.conflicts++
+                        return clause
+                    }
                     UNASSIGNED -> { if (!enqueue(otherLit, clause)) return clause }
                 }
                 i++
@@ -220,7 +228,7 @@ class Solver2(private val numVars: Int, initialClauses: List<Clause>) {
         }
 
         learned.add(0, -p)
-        return Clause(learned.distinct().toIntArray())
+        return Clause(learned.toIntArray())
     }
 
     private fun computeBacktrackLevel(clause: Clause): Int {

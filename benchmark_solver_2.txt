@@ -1,0 +1,886 @@
+========================================
+SAT Solver Parallel Tests
+========================================
+
+Timeout: 300s
+Tests: 86
+Solver: 2
+
+----------------------------------------
+Formula: add128.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 30792,026 ms
+Decisions: 2009900
+Propagations: 31220709
+Conflicts: 2009394
+Learned Clauses: 2009393
+----------------------------------------
+Formula: add16.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1061,551 ms
+Decisions: 349
+Propagations: 7144
+Conflicts: 312
+Learned Clauses: 311
+----------------------------------------
+Formula: add16R.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1352,627 ms
+Decisions: 349
+Propagations: 7144
+Conflicts: 312
+Learned Clauses: 311
+----------------------------------------
+Formula: add2.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 727,584 ms
+Decisions: 4
+Propagations: 40
+Conflicts: 4
+Learned Clauses: 3
+----------------------------------------
+Formula: add2R.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1012,427 ms
+Decisions: 4
+Propagations: 40
+Conflicts: 4
+Learned Clauses: 3
+----------------------------------------
+Formula: add32.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1348,564 ms
+Decisions: 797
+Propagations: 17752
+Conflicts: 760
+Learned Clauses: 759
+----------------------------------------
+Formula: add32R.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1380,794 ms
+Decisions: 797
+Propagations: 17752
+Conflicts: 760
+Learned Clauses: 759
+----------------------------------------
+Formula: add4.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1311,078 ms
+Decisions: 46
+Propagations: 668
+Conflicts: 29
+Learned Clauses: 28
+----------------------------------------
+Formula: add4R.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1348,094 ms
+Decisions: 46
+Propagations: 668
+Conflicts: 29
+Learned Clauses: 28
+----------------------------------------
+Formula: add64.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 664,416 ms
+Decisions: 1781
+Propagations: 41961
+Conflicts: 1744
+Learned Clauses: 1743
+----------------------------------------
+Formula: add8.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 993,978 ms
+Decisions: 144
+Propagations: 2536
+Conflicts: 113
+Learned Clauses: 112
+----------------------------------------
+Formula: add8R.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 994,079 ms
+Decisions: 144
+Propagations: 2536
+Conflicts: 113
+Learned Clauses: 112
+----------------------------------------
+Formula: assume2.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1136,743 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: assume3.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 913,653 ms
+Decisions: 4
+Propagations: 5
+Conflicts: 1
+Learned Clauses: 1
+----------------------------------------
+Formula: assume7.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1380,293 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: bug1.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 903,198 ms
+Decisions: 0
+Propagations: 1
+Conflicts: 1
+Learned Clauses: 0
+----------------------------------------
+Formula: clash.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 941,964 ms
+Decisions: 0
+Propagations: 0
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: dominate1.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 914,345 ms
+Decisions: 4
+Propagations: 8
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: empty.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 820,215 ms
+Decisions: 0
+Propagations: 0
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: eq1.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 787,898 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: eq2.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 767,204 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: f2r.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 955,466 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 2
+Learned Clauses: 1
+----------------------------------------
+Formula: f3r.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1123,627 ms
+Decisions: 3
+Propagations: 7
+Conflicts: 4
+Learned Clauses: 3
+----------------------------------------
+Formula: full2.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 1004,230 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 2
+Learned Clauses: 1
+----------------------------------------
+Formula: full2R.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 847,695 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 2
+Learned Clauses: 1
+----------------------------------------
+Formula: full2no00.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 923,585 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: full2no01.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 733,560 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: full2no10.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 823,185 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 1
+Learned Clauses: 1
+----------------------------------------
+Formula: full2no11.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 779,875 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 1
+Learned Clauses: 1
+----------------------------------------
+Formula: full3.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 795,302 ms
+Decisions: 3
+Propagations: 6
+Conflicts: 4
+Learned Clauses: 3
+----------------------------------------
+Formula: full3R.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 872,760 ms
+Decisions: 3
+Propagations: 6
+Conflicts: 4
+Learned Clauses: 3
+----------------------------------------
+Formula: full4.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 649,750 ms
+Decisions: 7
+Propagations: 14
+Conflicts: 8
+Learned Clauses: 7
+----------------------------------------
+Formula: mcs1.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 728,925 ms
+Decisions: 0
+Propagations: 0
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: mcs2.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 698,655 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 2
+Learned Clauses: 1
+----------------------------------------
+Formula: mcs3.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 778,109 ms
+Decisions: 0
+Propagations: 0
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: mus0.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 703,958 ms
+Decisions: 0
+Propagations: 0
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: mus1.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 758,795 ms
+Decisions: 0
+Propagations: 0
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: mus2.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 795,755 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 2
+Learned Clauses: 1
+----------------------------------------
+Formula: mus3.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 725,051 ms
+Decisions: 0
+Propagations: 0
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: or.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 943,572 ms
+Decisions: 2
+Propagations: 2
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: ph2.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 831,888 ms
+Decisions: 1
+Propagations: 9
+Conflicts: 2
+Learned Clauses: 1
+----------------------------------------
+Formula: ph3.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 664,274 ms
+Decisions: 8
+Propagations: 57
+Conflicts: 9
+Learned Clauses: 8
+----------------------------------------
+Formula: ph4.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 662,906 ms
+Decisions: 36
+Propagations: 298
+Conflicts: 37
+Learned Clauses: 36
+----------------------------------------
+Formula: ph5.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 763,627 ms
+Decisions: 146
+Propagations: 1493
+Conflicts: 146
+Learned Clauses: 145
+----------------------------------------
+Formula: ph6.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 781,447 ms
+Decisions: 577
+Propagations: 7094
+Conflicts: 576
+Learned Clauses: 575
+----------------------------------------
+Formula: prime121.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1053,770 ms
+Decisions: 21
+Propagations: 2104
+Conflicts: 12
+Learned Clauses: 12
+----------------------------------------
+Formula: prime1369.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1180,397 ms
+Decisions: 272
+Propagations: 61647
+Conflicts: 206
+Learned Clauses: 206
+----------------------------------------
+Formula: prime1681.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1127,496 ms
+Decisions: 325
+Propagations: 72947
+Conflicts: 246
+Learned Clauses: 246
+----------------------------------------
+Formula: prime169.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 611,166 ms
+Decisions: 55
+Propagations: 6814
+Conflicts: 40
+Learned Clauses: 40
+----------------------------------------
+Formula: prime1849.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1251,572 ms
+Decisions: 171
+Propagations: 35256
+Conflicts: 116
+Learned Clauses: 116
+----------------------------------------
+Formula: prime2209.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1167,097 ms
+Decisions: 98
+Propagations: 36767
+Conflicts: 94
+Learned Clauses: 94
+----------------------------------------
+Formula: prime25.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 744,738 ms
+Decisions: 6
+Propagations: 439
+Conflicts: 6
+Learned Clauses: 6
+----------------------------------------
+Formula: prime289.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1159,750 ms
+Decisions: 127
+Propagations: 20279
+Conflicts: 105
+Learned Clauses: 105
+----------------------------------------
+Formula: prime361.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1341,899 ms
+Decisions: 74
+Propagations: 11080
+Conflicts: 58
+Learned Clauses: 58
+----------------------------------------
+Formula: prime4.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 946,979 ms
+Decisions: 2
+Propagations: 28
+Conflicts: 1
+Learned Clauses: 1
+----------------------------------------
+Formula: prime49.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 866,479 ms
+Decisions: 5
+Propagations: 492
+Conflicts: 3
+Learned Clauses: 3
+----------------------------------------
+Formula: prime529.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1090,633 ms
+Decisions: 63
+Propagations: 15016
+Conflicts: 53
+Learned Clauses: 53
+----------------------------------------
+Formula: prime65537.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 2432,352 ms
+Decisions: 4332
+Propagations: 1252742
+Conflicts: 3433
+Learned Clauses: 3432
+----------------------------------------
+Formula: prime841.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1161,736 ms
+Decisions: 147
+Propagations: 24600
+Conflicts: 97
+Learned Clauses: 97
+----------------------------------------
+Formula: prime9.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1053,641 ms
+Decisions: 2
+Propagations: 129
+Conflicts: 2
+Learned Clauses: 2
+----------------------------------------
+Formula: prime961.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1054,215 ms
+Decisions: 32
+Propagations: 5612
+Conflicts: 19
+Learned Clauses: 19
+----------------------------------------
+Formula: sat0.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 993,157 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 2
+Learned Clauses: 1
+----------------------------------------
+Formula: sat1.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 683,529 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: sat10.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 840,359 ms
+Decisions: 3
+Propagations: 6
+Conflicts: 2
+Learned Clauses: 2
+----------------------------------------
+Formula: sat11.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 847,714 ms
+Decisions: 3
+Propagations: 6
+Conflicts: 2
+Learned Clauses: 2
+----------------------------------------
+Formula: sat12.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 922,539 ms
+Decisions: 3
+Propagations: 7
+Conflicts: 3
+Learned Clauses: 3
+----------------------------------------
+Formula: sat13.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 1045,224 ms
+Decisions: 3
+Propagations: 7
+Conflicts: 3
+Learned Clauses: 3
+----------------------------------------
+Formula: sat2.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 993,322 ms
+Decisions: 1
+Propagations: 2
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: sat3.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 873,827 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 1
+Learned Clauses: 1
+----------------------------------------
+Formula: sat4.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 817,714 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 1
+Learned Clauses: 1
+----------------------------------------
+Formula: sat5.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 732,314 ms
+Decisions: 3
+Propagations: 6
+Conflicts: 4
+Learned Clauses: 3
+----------------------------------------
+Formula: sat6.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 908,850 ms
+Decisions: 2
+Propagations: 3
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: sat7.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 519,220 ms
+Decisions: 2
+Propagations: 3
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: sat8.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 773,251 ms
+Decisions: 2
+Propagations: 4
+Conflicts: 1
+Learned Clauses: 1
+----------------------------------------
+Formula: sat9.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 640,809 ms
+Decisions: 2
+Propagations: 4
+Conflicts: 1
+Learned Clauses: 1
+----------------------------------------
+Formula: scc1.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 752,700 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: scc2.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 673,008 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 2
+Learned Clauses: 1
+----------------------------------------
+Formula: sub0.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 652,130 ms
+Decisions: 3
+Propagations: 3
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: unit0.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 627,899 ms
+Decisions: 0
+Propagations: 1
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: unit1.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 566,478 ms
+Decisions: 0
+Propagations: 1
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: unit2.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 552,213 ms
+Decisions: 0
+Propagations: 2
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: unit3.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 491,400 ms
+Decisions: 0
+Propagations: 2
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: unit4.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 491,724 ms
+Decisions: 0
+Propagations: 1
+Conflicts: 1
+Learned Clauses: 0
+----------------------------------------
+Formula: unit5.in
+Expected: UNSAT
+Actual:   UNSAT
+Result: PASS
+Runtime: 488,032 ms
+Decisions: 0
+Propagations: 5
+Conflicts: 1
+Learned Clauses: 0
+----------------------------------------
+Formula: watch0.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 475,917 ms
+Decisions: 0
+Propagations: 2
+Conflicts: 0
+Learned Clauses: 0
+----------------------------------------
+Formula: watch1.in
+Expected: SAT
+Actual:   SAT
+Result: PASS
+Runtime: 498,312 ms
+Decisions: 1
+Propagations: 3
+Conflicts: 0
+Learned Clauses: 0
+
+========================================
+SUMMARY
+========================================
+Passed:   86
+Failed:   0
+Timeouts: 0
+Errors:   0
+
+Solver Runtime Sum: 107,004 s
+Wall Clock Runtime: 30,874 s
+
+Average Solver Runtime: 1,244 s
+Average Decisions: 23499,23
+Average Propagations: 382256,00
+Average Conflicts: 23475,50
+Average Learned Clauses: 23475,12
+

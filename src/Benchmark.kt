@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit
 
 private const val TIMEOUT_SECONDS = 5L * 60
 private val solverJar = File("out/artifacts/SAT_Solver_jar/SAT_Solver.jar").absolutePath
-private const val SOLVER_VERSION = "2"
+private const val SOLVER_VERSION = "1"
 
 data class TestResult(
     val fileName: String,
@@ -16,6 +16,10 @@ data class TestResult(
     val success: Boolean,
     val timeout: Boolean = false,
     val error: Boolean = false,
+    val decisions: Long = -1,
+    val propagations: Long = -1,
+    val conflicts: Long = -1,
+    val learnedClauses: Long = -1,
 )
 
 fun main(args: Array<String>) {
@@ -95,13 +99,44 @@ fun main(args: Array<String>) {
                         "SAT" in output -> "SAT"
                         else -> "UNKNOWN"
                     }
+                    val decisions = Regex("""DECISIONS (\d+)""")
+                            .find(output)
+                            ?.groupValues
+                            ?.get(1)
+                            ?.toLong()
+                            ?: -1
+
+                    val propagations = Regex("""PROPAGATIONS (\d+)""")
+                            .find(output)
+                            ?.groupValues
+                            ?.get(1)
+                            ?.toLong()
+                            ?: -1
+
+                    val conflicts = Regex("""CONFLICTS (\d+)""")
+                            .find(output)
+                            ?.groupValues
+                            ?.get(1)
+                            ?.toLong()
+                            ?: -1
+
+                    val learned = Regex("""LEARNED (\d+)""")
+                            .find(output)
+                            ?.groupValues
+                            ?.get(1)
+                            ?.toLong()
+                            ?: -1
 
                     TestResult(
                         fileName = file.name,
                         expected = expected,
                         actual = actual,
                         runtimeMs = runtimeMs,
-                        success = (actual == expected)
+                        success = (actual == expected),
+                        decisions = decisions,
+                        propagations = propagations,
+                        conflicts = conflicts,
+                        learnedClauses = learned
                     )
 
                 } catch (e: Exception) {
@@ -134,6 +169,11 @@ fun main(args: Array<String>) {
 
     var solverRuntimeMs = 0.0
 
+    var totalDecisions = 0L
+    var totalPropagations = 0L
+    var totalConflicts = 0L
+    var totalLearned = 0L
+
     for (r in results) {
 
         println("----------------------------------------")
@@ -163,6 +203,22 @@ fun main(args: Array<String>) {
 
         println("Runtime: %.3f ms".format(r.runtimeMs))
         solverRuntimeMs += r.runtimeMs
+        if(r.decisions != -1L) {
+            println("Decisions: ${r.decisions}")
+            totalDecisions += r.decisions
+        }
+        if(r.propagations != -1L) {
+            println("Propagations: ${r.propagations}")
+            totalPropagations += r.propagations
+        }
+        if(r.conflicts != -1L) {
+            println("Conflicts: ${r.conflicts}")
+            totalConflicts += r.conflicts
+        }
+        if(r.learnedClauses != -1L) {
+            println("Learned Clauses: ${r.learnedClauses}")
+            totalLearned += r.learnedClauses
+        }
     }
 
     println()
@@ -179,7 +235,15 @@ fun main(args: Array<String>) {
     println("Solver Runtime Sum: %.3f s".format(solverRuntimeMs/1000))
     println("Wall Clock Runtime: %.3f s".format(totalRuntimeMs/1000))
 
+    println()
+
     if (results.isNotEmpty()) {
         println("Average Solver Runtime: %.3f s".format(solverRuntimeMs / results.size / 1000))
+        println("Average Decisions: %.2f".format(totalDecisions.toDouble() / results.size))
+        println("Average Propagations: %.2f".format(totalPropagations.toDouble() / results.size))
+        println("Average Conflicts: %.2f".format(totalConflicts.toDouble() / results.size))
+        if (SOLVER_VERSION == "2") {
+            println("Average Learned Clauses: %.2f".format(totalLearned.toDouble() / results.size))
+        }
     }
 }

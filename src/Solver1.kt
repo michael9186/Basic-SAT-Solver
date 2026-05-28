@@ -7,8 +7,9 @@ private const val FALSE = -1
 class Solver1(
     private val numVars: Int,
     private val clauses: List<Clause>
-
 ) {
+
+    val stats = SolverStats()
 
     /*
         assignment[v]
@@ -59,7 +60,6 @@ class Solver1(
             val conflict = propagate()
 
             if (conflict != null) {
-
                 if (!backtrack()) {
                     return false
                 }
@@ -110,7 +110,7 @@ class Solver1(
     private fun propagate(): Clause? {
 
         while (propagationQueue.isNotEmpty()) {
-
+            stats.propagations++
             val lit = propagationQueue.removeFirst()
 
             //literal that became FALSE
@@ -182,6 +182,7 @@ class Solver1(
 
                     FALSE -> {
                         //both watched literals false => conflict
+                        stats.conflicts++
                         return clause
                     }
 
@@ -256,7 +257,7 @@ class Solver1(
     private fun decide(variable: Int) {
 
         val lit = variable
-
+        stats.decisions++
         decisions.add(
             Decision(
                 lit = lit,
@@ -288,7 +289,6 @@ class Solver1(
 
             //try opposite branch
             if (!decision.flipped) {
-
                 val opposite = -decision.lit
 
                 decisions.add(
